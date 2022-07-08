@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants/constants.dart';
+import 'package:portfolio/data/data.dart';
 import 'package:portfolio/screens/widgets/project_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,7 +11,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Row(
-          children: [
+          children: const [
             Icon(
               Icons.circle_sharp,
               size: 12,
@@ -39,15 +41,15 @@ class HomeScreen extends StatelessWidget {
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: [
-                    Colors.lightBlue,
-                    Colors.pinkAccent,
+                    kGradient1,
+                    kGradient2,
                   ],
                 ),
               ),
-              child: Align(
+              child: const Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: CircleAvatar(
                     radius: 60,
                     backgroundImage: AssetImage("assets/aditya.jpeg"),
@@ -55,126 +57,210 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Center(child: Text("Aditya Thakur")),
-            Center(child: Text("@adityathakurxd")),
+            Center(
+                child: Text(
+              name,
+              style: kTitleText,
+            )),
+            Center(
+                child: Text(
+              "@$username",
+              style: kSubTitleText,
+            )),
+            SizedBox(
+              height: 10,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                OutlinedButton(onPressed: () {}, child: Text("View Portfolio")),
+                OutlinedButton(
+                    onPressed: () {
+                      //Code to launch resume
+                    },
+                    child: Text(
+                      "View Resume",
+                      style: kSubTitleText,
+                    )),
+                SizedBox(
+                  width: 10,
+                ),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      //Call to launch email
+                    },
                     child: Row(
-                      children: [Icon(Icons.add), Text("Follow")],
+                      children: [
+                        const Icon(
+                          Icons.add,
+                          size: 16,
+                          color: Colors.white,
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          "Contact",
+                          style: kSubTitleText.copyWith(color: Colors.white),
+                        )
+                      ],
                     ))
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+            Center(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.8,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Experience"),
-                    Text(
-                        "I specialise in UI/UX design, brand strategy, webflow development."),
-                    Divider(),
-                    Text("About Me"),
-                    Text("I am a Product Designer."),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Card(
-                      color: Colors.white,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 20, horizontal: 40),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Location"),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.circle,
-                                    size: 16,
-                                  ),
-                                  Text("Delhi, India")
-                                ],
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text("Website"),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                children: [
-                                  Text("adityathakur.in"),
-                                  Icon(
-                                    Icons.launch,
-                                    size: 16,
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text("Portfolio"),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                children: [
-                                  Text("@adityathakurxd"),
-                                  Icon(
-                                    Icons.launch,
-                                    size: 16,
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text("Email"),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                children: [
-                                  Text("mail@adityathakur.in"),
-                                  Icon(
-                                    Icons.launch,
-                                    size: 16,
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                            ]),
+                    Flexible(
+                      flex: 3,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Experience",
+                            style: kSectionTitleText,
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Text(aboutWorkExperience),
+                          Divider(),
+                          Text("About Me", style: kSectionTitleText),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Text(aboutMeSummary),
+                        ],
                       ),
-                    )
+                    ),
+                    Flexible(
+                      flex: 1,
+                      child: Column(
+                        children: [
+                          Card(
+                            color: Colors.white,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20, horizontal: 40),
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Location",
+                                      style: kSubTitleText,
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      children: [
+                                        const Icon(
+                                          Icons.circle,
+                                          size: 16,
+                                        ),
+                                        const SizedBox(
+                                          width: 5,
+                                        ),
+                                        Text(
+                                          location,
+                                        )
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      "Website",
+                                      style: kSubTitleText,
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(website),
+                                        const SizedBox(
+                                          width: 5,
+                                        ),
+                                        const Icon(
+                                          Icons.launch,
+                                          size: 16,
+                                        )
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      "Portfolio",
+                                      style: kSubTitleText,
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(portfolio),
+                                        const SizedBox(
+                                          width: 5,
+                                        ),
+                                        const Icon(
+                                          Icons.launch,
+                                          size: 16,
+                                        )
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      "Email",
+                                      style: kSubTitleText,
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(email),
+                                        const SizedBox(
+                                          width: 5,
+                                        ),
+                                        const Icon(
+                                          Icons.launch,
+                                          size: 16,
+                                        )
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                  ]),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
-              ],
+              ),
             ),
-            SizedBox(
-              width: 340 * 2,
-              height: 160,
-              child: GridView.builder(
-                  shrinkWrap: true,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                  ),
-                  itemCount: 300,
-                  itemBuilder: (BuildContext context, int index) {
-                    return ProjectWidget();
-                  }),
+            Center(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.8,
+                child: GridView.builder(
+                    shrinkWrap: true,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2, childAspectRatio: 3),
+                    itemCount: projectList.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return ProjectWidget(
+                        projectData: projectList[index],
+                      );
+                    }),
+              ),
             ),
           ],
         ),
