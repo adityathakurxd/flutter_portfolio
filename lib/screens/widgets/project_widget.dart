@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../models/project_model.dart';
 
 class ProjectWidget extends StatelessWidget {
@@ -8,7 +9,7 @@ class ProjectWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width * 0.4,
       child: Card(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -37,15 +38,17 @@ class ProjectWidget extends StatelessWidget {
               projectData.description,
             ),
           ),
-          Spacer(),
+          const Spacer(),
           const Divider(),
           Align(
             alignment: Alignment.bottomRight,
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   //Launch project on GitHub
+                  final Uri _url = Uri.parse(projectData.link);
+                  await launchUrl(_url);
                 },
                 child: Text(
                   "View Project",

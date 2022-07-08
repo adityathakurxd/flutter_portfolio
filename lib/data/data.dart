@@ -9,6 +9,13 @@ Color kGradient2 = Colors.pinkAccent;
 String name = "Aditya Thakur";
 String username = "adityathakurxd";
 
+//Link to resume on Google Drive
+String resumeLink =
+    "https://drive.google.com/file/d/1uZPqMWva6pZxzQxsR_ILLZ_FxJr24QeY/view?usp=sharing";
+
+//Contact Email
+String contactEmail = "mail@adityathakur.in";
+
 String aboutWorkExperience = '''
 Aditya is a developer and designer with experience in building cross-platform applications. 
 
@@ -32,6 +39,11 @@ List<Project> projectList = [
       description:
           "Winner IEEE Mandi 'Go Online' Challenge at Electrothon, NIT Hamirpur.",
       link: "https://github.com/adityathakurxd/shades"),
+  Project(
+      name: "Fiasco",
+      description:
+          "Fiasco is one stop solution to help you manage Family expenses in one place!",
+      link: "https://github.com/adityathakurxd/fiasco"),
   Project(
       name: "Fiasco",
       description:
