@@ -51,7 +51,7 @@ class HomeScreen extends StatelessWidget {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: CircleAvatar(
                     radius: 60,
                     backgroundImage: AssetImage(imagePath),
