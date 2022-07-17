@@ -48,13 +48,13 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              child: const Align(
+              child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
                   padding: EdgeInsets.all(10.0),
                   child: CircleAvatar(
                     radius: 60,
-                    backgroundImage: AssetImage("assets/aditya.jpeg"),
+                    backgroundImage: AssetImage(imagePath),
                   ),
                 ),
               ),
