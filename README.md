@@ -2,9 +2,10 @@
 
 A portfolio made using Flutter for web. It is an easy to use template.
 
+🛠 Video Guide: https://youtu.be/jjm9AsenwP8
+
 Fork the project -> Customise the data folder -> Deploy your app
 
-🛠  Working on a written guide and tutorial for the same.
 ## Design Inspiration
 
 ![8330b312e7a90edc2a0a3c4f9c583733](https://user-images.githubusercontent.com/53579386/173894353-2de51f4f-3513-4729-9af2-fa68910b35a8.jpeg)
