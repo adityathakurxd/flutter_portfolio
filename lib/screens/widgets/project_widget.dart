@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/constants.dart';
+import 'package:portfolio/utils/extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 import '../../models/project_model.dart';
 
 class ProjectWidget extends StatelessWidget {
@@ -10,7 +12,7 @@ class ProjectWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.4,
+      width: context.screenConstraint().width * 0.4,
       child: Card(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Padding(
@@ -47,8 +49,8 @@ class ProjectWidget extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () async {
                   //Launch project on GitHub
-                  final Uri _url = Uri.parse(projectData.link);
-                  await launchUrl(_url);
+                  final Uri url = Uri.parse(projectData.link);
+                  await launchUrl(url);
                 },
                 child: Text(
                   "View Project",

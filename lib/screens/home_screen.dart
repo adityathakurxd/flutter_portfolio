@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/constants/constants.dart';
 import 'package:portfolio/data/data.dart';
 import 'package:portfolio/screens/widgets/project_widget.dart';
+import 'package:portfolio/utils/extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,7 +10,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -78,8 +78,8 @@ class HomeScreen extends StatelessWidget {
                 OutlinedButton(
                     onPressed: () async {
                       //Code to launch resume
-                      final Uri _url = Uri.parse(resumeLink);
-                      await launchUrl(_url);
+                      final Uri url = Uri.parse(resumeLink);
+                      await launchUrl(url);
                     },
                     child: Text(
                       "View Resume",
@@ -120,8 +120,8 @@ class HomeScreen extends StatelessWidget {
             ),
             Center(
               child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.8,
-                child: screenSize.width > 1200
+                width: context.screenConstraint().width * 0.8,
+                child: context.screenConstraint().width > 1200
                     ? Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -391,31 +391,19 @@ class HomeScreen extends StatelessWidget {
             ),
             Center(
               child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.8,
-                child: screenSize.width > 1000
-                    ? GridView.builder(
-                        shrinkWrap: true,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2, childAspectRatio: 3),
-                        itemCount: projectList.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return ProjectWidget(
-                            projectData: projectList[index],
-                          );
-                        })
-                    : GridView.builder(
-                        shrinkWrap: true,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 1, childAspectRatio: 2),
-                        itemCount: projectList.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return ProjectWidget(
-                            projectData: projectList[index],
-                          );
-                        }),
-              ),
+                  width: context.screenConstraint().width * 0.8,
+                  child: GridView.builder(
+                      shrinkWrap: true,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          childAspectRatio:
+                              context.screenConstraint().width > 1000 ? 3 : 2),
+                      itemCount: projectList.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return ProjectWidget(
+                          projectData: projectList[index],
+                        );
+                      })),
             ),
           ],
         ),
