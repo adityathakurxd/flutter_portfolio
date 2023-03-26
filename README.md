@@ -28,10 +28,10 @@ https://user-images.githubusercontent.com/53579386/173894353-2de51f4f-3513-4729-
 ## Featured by Flutter
 The Official Flutter Twitter handle quote retweeted the portfolio project (still under development then). Link to the tweet [here](https://twitter.com/FlutterDev/status/1547324991095586818).
 
-
-<img width="599" alt="Aditya's Portfolio featured by the Google Flutter Team"
+<p align="center">
+  <img width="599" alt="Aditya's Portfolio featured by the Google Flutter Team"
 src="https://user-images.githubusercontent.com/53579386/216328354-ff78b058-1e46-4726-9762-4122edb95c8a.png">
-
+</p>
 
 ## Liked this project?
 Thank you for making it this far! If you liked the project, please do give it a star.
