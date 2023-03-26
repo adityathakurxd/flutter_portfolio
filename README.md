@@ -30,7 +30,10 @@ https://user-images.githubusercontent.com/53579386/178040398-8f40f51b-3f4f-4e6f-
 ## Featured by Flutter
 The Official Flutter Twitter handle quote retweeted the portfolio project (still under development then). Link to the tweet [here](https://twitter.com/FlutterDev/status/1547324991095586818).
 
-<p align =''center><img width="599" alt="Aditya's Portfolio featured by the Google Flutter Team" src="https://user-images.githubusercontent.com/53579386/216328354-ff78b058-1e46-4726-9762-4122edb95c8a.png"></p>
+<img width="599" alt="Aditya's Portfolio featured by the Google Flutter Team"
+p align =''center>
+src="https://user-images.githubusercontent.com/53579386/216328354-ff78b058-1e46-4726-9762-4122edb95c8a.png">
+</p>
 
 
 ## Liked this project?
