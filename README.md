@@ -8,7 +8,7 @@ Watch this video for a complete guide: https://youtu.be/jjm9AsenwP8
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=jjm9AsenwP8" target="_blank"></a>
 
-<p align=''center>
+<p align="center">
   <img src="http://img.youtube.com/vi/jjm9AsenwP8/mqdefault.jpg" alt="Watch the video" width="80%" height="60%" border="10" />
 </p>
 
