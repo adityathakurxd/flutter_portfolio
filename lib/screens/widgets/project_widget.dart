@@ -6,8 +6,8 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../models/project_model.dart';
 
 class ProjectWidget extends StatelessWidget {
-  Project projectData;
-  ProjectWidget({Key? key, required this.projectData}) : super(key: key);
+  final Project projectData;
+  const ProjectWidget({super. key, required this.projectData});
 
   @override
   Widget build(BuildContext context) {
