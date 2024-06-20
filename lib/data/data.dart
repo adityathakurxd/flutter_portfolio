@@ -15,6 +15,9 @@ String username = "flutterroles";
 String resumeLink =
     "https://drive.google.com/file/d/1uZPqMWva6pZxzQxsR_ILLZ_FxJr24QeY/view?usp=sharing";
 
+String websiteLink = "https://www.adityathakur.in";
+String portfolioLink = "https://www.adityathakur.in";
+
 //Contact Email
 String contactEmail = "mail@adityathakur.in";
 

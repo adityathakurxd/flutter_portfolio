@@ -197,9 +197,16 @@ class HomeScreen extends StatelessWidget {
                                               const SizedBox(
                                                 width: 5,
                                               ),
-                                              const Icon(
-                                                Icons.launch,
-                                                size: 16,
+                                              InkWell(
+                                                onTap: () async {
+                                                  //Code to launch website
+                                                  final Uri url = Uri.parse(websiteLink);
+                                                  await launchUrl(url);
+                                                },
+                                                child: const Icon(
+                                                  Icons.launch,
+                                                  size: 16,
+                                                ),
                                               )
                                             ],
                                           ),
@@ -219,9 +226,16 @@ class HomeScreen extends StatelessWidget {
                                               const SizedBox(
                                                 width: 5,
                                               ),
-                                              const Icon(
-                                                Icons.launch,
-                                                size: 16,
+                                              InkWell(
+                                                onTap: () async {
+                                                  //Code to launch portfolio
+                                                  final Uri url = Uri.parse(portfolioLink);
+                                                  await launchUrl(url);
+                                                },
+                                                child: const Icon(
+                                                  Icons.launch,
+                                                  size: 16,
+                                                ),
                                               )
                                             ],
                                           ),
@@ -241,9 +255,19 @@ class HomeScreen extends StatelessWidget {
                                               const SizedBox(
                                                 width: 5,
                                               ),
-                                              const Icon(
-                                                Icons.launch,
-                                                size: 16,
+                                              InkWell(
+                                                onTap: () async {
+                                                  //Code to launch email
+                                                  final Uri emailLaunchUri = Uri(
+                                                    scheme: 'mailto',
+                                                    path: contactEmail,
+                                                  );
+                                                  await launchUrl(emailLaunchUri);
+                                                },
+                                                child: const Icon(
+                                                  Icons.launch,
+                                                  size: 16,
+                                                ),
                                               )
                                             ],
                                           ),
